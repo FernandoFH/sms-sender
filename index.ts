@@ -1,10 +1,10 @@
 import { SQSEvent } from "aws-lambda"
 import { SNSClient, PublishCommand } from "@aws-sdk/client-sns"
 
-const REGION = "eu-west-1"
+const REGION = "us-east-1" //us-east-1
 const client = new SNSClient({region: REGION})
 
-type apiInput = {
+type apiInput = { 
     message: string
     phoneNumber: string
 }

@@ -35,20 +35,20 @@ data "aws_iam_policy_document" "text_sender" {
   statement {
     sid       = "AllowInvokingLambdas"
     effect    = "Allow"
-    resources = ["arn:aws:lambda:ap-southeast-1:*:function:*"]
+    resources = ["arn:aws:lambda:us-east-1:*:function:*"]
     actions   = ["lambda:InvokeFunction"]
   }
 
   statement {
     sid       = "AllowCreatingLogGroups"
     effect    = "Allow"
-    resources = ["arn:aws:logs:ap-southeast-1:*:*"]
+    resources = ["arn:aws:logs:us-east-1:*:*"]
     actions   = ["logs:CreateLogGroup"]
   }
   statement {
     sid       = "AllowWritingLogs"
     effect    = "Allow"
-    resources = ["arn:aws:logs:ap-southeast-1:*:log-group:/aws/lambda/*:*"]
+    resources = ["arn:aws:logs:us-east-1:*:log-group:/aws/lambda/*:*"]
 
     actions = [
       "logs:CreateLogStream",
